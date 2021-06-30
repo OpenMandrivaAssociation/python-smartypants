@@ -7,7 +7,7 @@ Summary:        plug-in that easily translates ASCII punctuation characters into
 Group:          Development/Python
 License:        BSD
 URL:            https://github.com/leohemsted/smartypants.py
-Source0:        https://github.com/leohemsted/smartypants.py/archive/v%{version}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://github.com/leohemsted/smartypants.py/archive/v%{version}/%{pypi_name}.py-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  pkgconfig(python)
