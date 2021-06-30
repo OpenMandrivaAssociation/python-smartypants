@@ -2,31 +2,21 @@
 
 Name:           python-%{pypi_name}
 Version:        2.0.1
-Release:        
+Release:        1
 Summary:        plug-in that easily translates ASCII punctuation characters into smart entities
 Group:          Development/Python
 License:        BSD
 URL:            https://github.com/leohemsted/smartypants.py
-Source0:        %url/archive/v%{version}/%{pypi_name}-%{version}.tar.gz
+Source0:        https://github.com/leohemsted/smartypants.py/archive/v%{version}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  pkgconfig(python3)
+BuildRequires:  pkgconfig(python)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(sphinx)
 
-%description
-SmartyPants is a free web publishing plug-in for Movable
-Type, Blosxom, and BBEdit that easily translates plain ASCII
-punctuation characters into “smart” typographic punctuation HTML
-entities.
-
-%package -n     python3-%{pypi_name}
-Summary:        plug-in that easily translates ASCII punctuation characters into smart entities
-Group:          Development/Python
-Requires:       python3dist(setuptools)
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
-%description -n python3-%{pypi_name}
+%description
 SmartyPants is a free web publishing plug-in for Movable
 Type, Blosxom, and BBEdit that easily translates plain ASCII
 punctuation characters into “smart” typographic punctuation HTML
@@ -60,19 +50,16 @@ make html
 rm -rf _build/html/.{doctrees,buildinfo}
 
 %install
-%py3_install
+%py_install
 
-%check
-%{__python3} setup.py test
-
-%files -n python3-%{pypi_name}
+%files
 %doc README.rst
 %doc CHANGES.rst
 %license COPYING
 %{_bindir}/%{pypi_name}
-%{python3_sitelib}/__pycache__/*
-%{python3_sitelib}/%{pypi_name}.py
-%{python3_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python_sitelib}/__pycache__/*
+%{python_sitelib}/%{pypi_name}.py
+%{python_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
 
 %files -n python-%{pypi_name}-doc
 %doc docs/_build/html
