@@ -57,9 +57,8 @@ rm -rf _build/html/.{doctrees,buildinfo}
 %doc CHANGES.rst
 %license COPYING
 %{_bindir}/%{pypi_name}
-%{python_sitelib}/__pycache__/*
 %{python_sitelib}/%{pypi_name}.py
-%{python_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python_sitelib}/%{pypi_name}-%{version}-py*.*.egg-info
 
 %files -n python-%{pypi_name}-doc
 %doc docs/_build/html
