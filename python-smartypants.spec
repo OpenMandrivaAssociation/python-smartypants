@@ -12,6 +12,7 @@ Source0:        https://github.com/leohemsted/smartypants.py/archive/v%{version}
 BuildArch:      noarch
 
 BuildSystem:	python
+BuildRequires:	make
 BuildRequires:  python%{pyver}dist(setuptools)
 %if %{with docs}
 BuildRequires:  python%{pyver}dist(sphinx)
