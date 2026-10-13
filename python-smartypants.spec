@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        2.0.2
-Release:        2
+Release:        3
 Summary:        plug-in that easily translates ASCII punctuation characters into smart entities
 Group:          Development/Python
 License:        BSD
@@ -13,7 +13,10 @@ BuildArch:      noarch
 
 BuildSystem:	python
 BuildRequires:	make
+BuildRequires:  pkgconfig(python3)
+BuildRequires:  python%{pyver}dist(pip)
 BuildRequires:  python%{pyver}dist(setuptools)
+BuildRequires:  python%{pyver}dist(wheel)
 %if %{with docs}
 BuildRequires:  python%{pyver}dist(sphinx)
 %endif
